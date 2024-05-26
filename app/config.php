@@ -5,7 +5,7 @@ define('USUARIO','root');
 define('PASSWORD','');
 define('BD','aulaunida');
 
-define('APP_NAME','SISTEMA DE GESTIÓN ESCOLAR');
+define('APP_NAME','Aula Unida');
 define('APP_URL','http://localhost/aulaunida');
 define('KEY_API_MAPS','');
 
