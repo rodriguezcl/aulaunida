@@ -18,18 +18,21 @@ include('../app/config.php');
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= APP_URL; ?>/public/dist/css/adminlte.min.css">
+    <!-- sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <style>
     .background-image {
-    background-image: url('https://img.freepik.com/vector-gratis/diseno-fondo-abstracto-blanco_23-2148825582.jpg?t=st=1716700950~exp=1716704550~hmac=3dbbdf12f9260e273185f1224a8183de89f6ce29773da4d170e01f3d39d8f551&w=1380');
-    background-size: cover;
-    background-position: center;
-}
+        background-image: url('https://img.freepik.com/vector-gratis/diseno-fondo-abstracto-blanco_23-2148825582.jpg?t=st=1716700950~exp=1716704550~hmac=3dbbdf12f9260e273185f1224a8183de89f6ce29773da4d170e01f3d39d8f551&w=1380');
+        background-size: cover;
+        background-position: center;
+    }
 </style>
 
 <body class="hold-transition login-page background-image">
-    
+
     <div class="login-box">
         <center><img src="<?= APP_URL; ?>/public/images/capdevila.png" width="200px" alt="">
             <br>
@@ -41,7 +44,7 @@ include('../app/config.php');
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
-<hr>
+                <hr>
                 <form action="controller_login.php" method="post">
                     <div class="input-group mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Correo electrónico">
@@ -67,7 +70,27 @@ include('../app/config.php');
             </div>
         </div>
     </div>
-    
+
+    <?php
+    session_start();
+    if (isset($_SESSION['mensaje'])) {
+        $mensaje = $_SESSION['mensaje'];
+    ?>
+        <script>
+            Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "<?=$mensaje?>",
+                showConfirmButton: false,
+                timer: 4000
+            });
+        </script>
+    <?php
+    session_destroy();
+    }
+
+    ?>
+
 
     <!-- jQuery -->
     <script src="<?= APP_URL; ?>/public/plugins/jquery/jquery.min.js"></script>
