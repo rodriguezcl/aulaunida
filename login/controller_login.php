@@ -25,6 +25,7 @@ if( ($contador>0) && (password_verify($password,$password_tabla)) ){
     session_start();
     $_SESSION['mensaje'] = "Bienvenido a Aula Unida®";
     $_SESSION['icono'] = "success";
+    $_SESSION['sesion_email'] = $email;
     header('Location:'.APP_URL."/admin");
 }else{
     echo "los datos son incorrectos";

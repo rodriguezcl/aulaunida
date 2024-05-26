@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    
     if ( (isset($_SESSION['mensaje'])) && (isset($_SESSION['icono']))) {
         $mensaje = $_SESSION['mensaje'];
         $icono = $_SESSION['icono'];
@@ -10,7 +10,7 @@
                 icon: "<?=$icono?>",
                 title: "<?=$mensaje?>",
                 showConfirmButton: false,
-                timer: 4000
+                timer: 2500
             });
         </script>
     <?php
