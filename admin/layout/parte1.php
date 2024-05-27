@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?= APP_NAME; ?></title>
+  <title><?= APP_NAME; ?>®</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -161,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Brand Logo -->
       <a href="<?= APP_URL; ?>/admin" class="brand-link">
         <img src="<?= APP_URL; ?>/public/images/logoau.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light"><?= APP_NAME; ?></span>
+        <span class="brand-text font-weight-light"><?= APP_NAME; ?>®</span>
       </a>
 
       <!-- Sidebar -->
@@ -191,9 +191,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link active">
+                  <a href="<?= APP_URL; ?>/admin/roles" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Página 1</p>
+                    <p>Tipos de roles</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -231,15 +231,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
 
 
-            <!-- <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+            <li class="nav-item">
+              <a href="<?= APP_URL; ?>/login/logout.php" class="nav-link bg-danger">
+                <i class="nav-icon fas"><i class="bi bi-door-open-fill"></i></i></i></i></i>
                 <p>
-                  Simple Link
-                  <span class="right badge badge-danger">New</span>
+                  Cerrar sesión
                 </p>
               </a>
-            </li> -->
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

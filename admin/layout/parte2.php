@@ -12,13 +12,13 @@
   <footer class="main-footer">
     <!-- To the right -->
 
-    <!-- <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div> -->
+    <div class="float-right d-none d-sm-inline">
+      v.1.0.
+    </div>
 
     
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2024 <a href="<?= APP_URL; ?>/admin">Aula Unida</a>.</strong> Todos los derechos reservados.
+    <strong>Copyright &copy; <?=$ano_actual;?> <a href="<?= APP_URL; ?>/admin">Aula Unida</a>.</strong> Todos los derechos reservados.
   </footer>
 </div>
 <!-- ./wrapper -->
