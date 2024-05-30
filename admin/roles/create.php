@@ -34,7 +34,7 @@ include('../../admin/layout/parte1.php');
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary" >Confirmar</button>
-                                        <a href="" class="btn btn-secondary">Cancelar</a>
+                                        <a href="<?=APP_URL;?>/admin/roles" class="btn btn-secondary">Cancelar</a>
                                     </div>
                                 </div>
                             </div>

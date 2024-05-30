@@ -2,6 +2,7 @@
 include('../../../app/config.php');
 
 $nombre_rol= $_POST['nombre_rol'];
+$nombre_rol=mb_strtoupper($nombre_rol,'UTF-8');
 
 if($nombre_rol== ""){
     session_start();
@@ -18,18 +19,27 @@ else{
     $sentencia->bindParam('estado', $estado_de_registro);
     
     
-    if($sentencia->execute()){
+    try {
+        if($sentencia->execute()){
+            session_start();
+            $_SESSION['mensaje'] = "Nuevo rol creado con éxito";
+            $_SESSION['icono'] = "success";
+            header('Location:'.APP_URL."/admin/roles");
+        }
+        else{
+            session_start();
+            $_SESSION['mensaje'] = "No se pudo crear el nuevo rol, contacte al área de Soporte.";
+            $_SESSION['icono'] = "error";
+            header('Location:'.APP_URL."/admin/roles/create.php");
+        }
+    } catch (Exception $exception) {
         session_start();
-        $_SESSION['mensaje'] = "¡Nuevo rol creado con éxito!";
-        $_SESSION['icono'] = "success";
-        header('Location:'.APP_URL."/admin/roles");
+            $_SESSION['mensaje'] = "El rol ingresado ya existe.";
+            $_SESSION['icono'] = "error";
+            header('Location:'.APP_URL."/admin/roles/create.php");
     }
-    else{
-        session_start();
-        $_SESSION['mensaje'] = "¡Error!, no se pudo crear el nuevo rol";
-        $_SESSION['icono'] = "error";
-        header('Location:'.APP_URL."/admin/roles/create.php");
-    }
+
+
 }
 
 
